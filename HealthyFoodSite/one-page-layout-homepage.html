@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    <meta charset="utf-8">
+    <title>One Page Layout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Stylesheets/global-stylesheet.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <style>
+
+    /* The below styles are used for styling the <main> section of this one page layout site. */
+
+      #flex-grid{
+
+        display: flex;
+
+      }
+
+      #sideNav{
+
+        background-color: #1b394b;
+        width: 0;/* width of side bar starts out as 0*/
+        flex-basis: 0;
+        /*border-right: 6px solid #01AAE7;*/
+
+        transition-property: flex-basis;
+        transition-duration: 0.2s;
+
+        /*position: relative;*/
+
+      }
+
+      #mobile-nav-x-icon{
+
+        color: #01AAE7;
+        font-size: 55px;
+
+      }
+
+      #exit-nav-button{
+
+        display: none;
+
+        outline-style: none;
+
+        position: fixed;
+        top: 10px;
+        left: 37%;
+
+        background-color: rgba(255, 0, 0, 0);
+        border-style: none;
+
+      }
+
+      #mobile-nav-menu{
+
+        display: none;
+
+        position: fixed;
+        top: 10px;
+        /*left: 35%;*/
+
+        font-size: 35px;
+        color: white;
+        list-style-type: none;
+
+        /*background-color: pink;*/
+        padding-left: 11%;
+
+
+      }
+
+      #mobile-nav-menu li{
+
+        line-height: 70px;
+
+      }
+
+      #mobile-nav-menu li:hover{
+
+        color: #a7f1a7;
+
+      }
+
+      #main-site-section{
+
+      background-image: url("Images/top-section-background.jpg");
+      background-size: 100% 520px;
+      background-repeat: no-repeat;
+
+      }
+
+      #top-section{
+
+        /*background-color: red;*/
+        /*border-bottom: 2px solid red;*/
+        height: 400px;
+        padding-left: 6%;
+
+
+      }
+
+      #webpage-title{
+
+        font-size: 50px;
+        text-align: center;
+        padding-right: 10%;
+
+        color: #01AAE7;
+
+      }
+
+
+      #features-section{
+
+        background-color: white;
+        /*border-top: 4px solid #142B38;*/
+          color: #01AAE7;
+
+        padding-top: 30px;
+        padding-bottom: 130px;
+
+      }
+
+      #feature-heading{
+
+        font-size: 50px;
+        text-align: center;
+        padding-bottom: 30px;
+
+        }
+
+      .feature-image{
+
+        display: block;
+        margin: auto;
+        width: 70%;
+        height: 280px;
+        position: relative;
+        right: 2%;
+
+        box-shadow: 30px 20px #1b394b, 30px -20px #1b394b;
+
+      }
+
+      #about-section{
+
+        /*background-image: linear-gradient( #a7f1a7 50%, white 50%);*/
+        background-color: #1b394b;
+
+        /*border-top: 4px solid #142B38;
+        border-bottom: 4px solid #142B38;*/
+
+        color: white;
+
+        padding-top: 10px;
+        padding-bottom: 60px;
+
+      }
+
+      #about-heading, #contact-heading{
+
+        font-size: 50px;
+        text-align: center;
+        color: #01AAE7;
+
+      }
+
+      #about-heading{
+
+        position: relative;
+        bottom: 10px;
+
+      }
+
+
+      #about-image{
+
+        display: block;
+        margin: auto;
+        width: 70%;
+        height: 250px;
+
+      }
+
+      #about-summary-paragraph{
+
+        /*background-color: red;
+        border: 2px solid green;*/
+        margin: auto;
+        width: 70%;
+
+        padding-top: 50px;
+        font-size: 20px;
+        text-align: justify;
+
+      }
+
+      #contact-section{
+
+        background-image: url("Images/contact-background.jpg");
+        /*background-color: white;*/
+        background-size: 100% 760px;
+        background-repeat: no-repeat;
+
+        height: 640px;
+
+        padding-top: 60px;
+        padding-bottom: 60px;
+
+      }
+
+      #contact-heading{
+
+        color: #01AAE7;
+
+      }
+
+      #contact-form{
+
+        /*background-color: red;*/
+
+        margin: auto;
+        width: 75%;
+
+      }
+
+      .form-widget{
+
+        display: block;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-size: 18px;
+
+      }
+
+      #contact-form > input{
+
+        width: 97%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 5px;
+
+      }
+
+      textarea{
+
+        width: 97.5%;
+        height: 170px;
+
+      }
+
+      #contact-form > input, textarea{
+
+        margin-bottom: 10px;
+        border: 4px solid #142B38;
+
+      }
+
+      #submit-button{
+
+        width: 100%;
+        background-color: #1b394b;
+        border-style: none;
+        color: white;
+        font-size: 25px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin-top: 20px;
+        border-radius: 7px;
+
+        font-weight: bold;
+
+      }
+
+      #submit-button:hover{
+
+        background-color: #01AAE7;
+
+      }
+
+      #bottom-link-div{
+
+      font-size: 25px;
+      text-align: center;
+
+      position: relative;
+      top: 120px;
+
+      }
+
+      #bottom-link-div > a{
+
+        color: steelblue;
+
+      }
+
+      #bottom-link-div > a:hover{
+
+      color: lightgreen;
+
+      }
+
+
+  @media screen and (min-width: 700px){
+
+    .feature-image{
+
+      width: 50%;
+
+    }
+
+    #about-image{
+
+      width: 60%;
+      height: 300px;
+
+    }
+
+    #about-section{
+
+      padding-top: 30px;
+
+    }
+
+  }
+
+  @media screen and (min-width: 770px){
+
+
+    #main-site-section{
+
+      background-size: 100% 630px;
+
+    }
+
+
+    #top-section{
+
+      /*background-color: red;*/
+      /*border-bottom: 2px solid red;*/
+      height: 500px;
+
+    }
+
+
+    #webpage-title{
+
+        font-size: 63px;
+        padding-top: 30px;
+
+    }
+
+
+    #flex-container{
+
+      /*background-color: pink;*/
+      display: flex;
+
+      justify-content: space-between;
+
+      margin: auto;
+      width: 90%;
+
+    }
+
+    #about-image{
+
+      margin: 0;
+      width: 0;
+
+      flex-basis: 35%;
+
+    }
+
+    #about-summary-paragraph{
+
+      padding-top: 0;
+
+      margin: 0;
+      width: 0;
+
+      flex-basis: 60%;
+
+    }
+
+    #contact-form{
+
+    width: 70%;
+
+    }
+
+  }
+
+
+@media screen and (min-width: 900px){
+
+
+  .feature-image{
+
+    width: 35%;
+    height: 350px;
+
+  }
+
+  #about-section{
+
+    padding-top: 30px;
+    padding-bottom: 110px;
+
+  }
+
+  #about-image{
+
+    /*width: 450px;*/
+    height: 335px;
+
+  }
+
+}
+
+
+@media screen and (min-width: 1200px){
+
+  #main-site-section{
+
+    background-size: 100% 770px;
+
+  }
+
+
+  #top-section{
+
+    /*background-color: red;*/
+    height: 650px;
+
+  }
+
+  #about-summary-paragraph{
+
+    font-size: 22px;
+
+  }
+
+  #contact-form{
+
+    width: 40%;
+
+  }
+
+}
+
+    </style>
+
+  </head>
+  <body>
+
+    <div id="flex-grid">
+
+    <aside id="sideNav"><!-- represents the side bar content. This becomes a flex item -->
+
+      <button id="exit-nav-button"> <span id="mobile-nav-x-icon" class="material-icons">close</span> </button>
+
+      <ul id="mobile-nav-menu">
+        <li>Features</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+
+    </aside>
+
+    <div id="main-site-section"><!-- represents the site content that is not the side nav bar. This becomes
+    a flex item -->
+
+    <header id="header">
+
+      <button id="hamburger-menu-button"> <span class="material-icons" style="font-size: 40px; color: white;">menu</span> </button>
+
+      <nav id="navigation-bar"><!-- will be display:flex; and display: none on mobile-->
+
+        <ul id="navigation-menu">
+          <li> <a href="#">Home</a> </li>
+          <li> <a href="#about-section">About</a> </li>
+          <li> <a href="#contact-section">Contact</a> </li>
+        </ul>
+
+      </nav><!-- end of navigation -->
+
+    </header><!-- end of header -->
+
+    <main>
+
+      <section id="top-section">
+        <h1 id="webpage-title">Webpage Title</h1>
+      </section><!-- end top section -->
+
+      <section id="features-section">
+
+        <h2 id="feature-heading">Features</h2>
+        <img class="feature-image" src="Images/bake.jpg" alt="">
+        <!--<span class="slider-circles"></span>
+        <span class="slider-circles"></span>-->
+
+      </section><!-- end of features section -->
+
+      <section id="about-section">
+
+
+        <h2 id="about-heading">About</h2>
+
+        <div id="flex-container">
+          <img id="about-image" src="Images/pot.jpg" alt="">
+
+          <p id="about-summary-paragraph">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+
+        </div>
+
+      </section><!-- end of about section -->
+
+
+      <section id="contact-section">
+
+        <h2 id="contact-heading">Contact</h2>
+
+        <form id="contact-form">
+
+          <input class="form-widget" type="text" placeholder="Name">
+          <input class="form-widget" type="email" placeholder="Email">
+          <textarea class="form-widget" placeholder="Message"></textarea>
+          <button id="submit-button" class="form-widget" type="submit">Submit</button>
+
+        </form><!-- end of form -->
+
+        <div id="bottom-link-div">
+          <a id="back-to-top-link" href="#header">Back to top</a>
+        </div>
+
+      </section><!-- end of contact section -->
+
+    </main>
+
+    <footer></footer>
+
+  </div><!-- end main site section -->
+
+</div><!-- end of flex grid-->
+
+
+  <script>
+
+  let body = document.getElementsByTagName("body");
+  body = body[0];
+
+  let hamburgerIcon = document.getElementById("hamburger-menu-button");
+  let sideNav = document.getElementById("sideNav");
+  let mainSite = document.getElementById("main-site-section");
+  let mobileNavMenu = document.getElementById("mobile-nav-menu");
+  let exitNavButton = document.getElementById("exit-nav-button");
+  let webPageTitle = document.getElementById("webpage-title");
+  let mq = window.matchMedia( "(min-width: 930px)" );
+
+  mq.addListener(changeDisplay);
+
+  function changeDisplay() {
+
+    sideNav.style.borderRightStyle = "none";
+    sideNav.style.flexBasis = "0";
+    mainSite.style.flexBasis = "100%";
+    webPageTitle.style.fontSize = "50px";
+    exitNavButton.style.display = "none";
+    mobileNavMenu.style.display = "none";
+
+  }
+
+
+  hamburgerIcon.addEventListener("click", expandSideNav);
+  exitNavButton.addEventListener("click", closeSideNav);
+
+
+  function expandSideNav(){
+
+    sideNav.style.borderRight = "2px solid #01AAE7";
+    exitNavButton.style.display = "inline";
+    mobileNavMenu.style.display = "block";
+    sideNav.style.flexBasis = "50%";
+    mainSite.style.flexBasis = "50%";
+    //body.style.overflow = "hidden";
+    webPageTitle.style.fontSize = "40px";
+
+  }// end function expandSideNav
+
+
+  function closeSideNav(){
+
+    sideNav.style.borderRightStyle = "none";
+    exitNavButton.style.display = "none";
+    mobileNavMenu.style.display = "none";
+    sideNav.style.flexBasis = "0";
+    mainSite.style.flexBasis = "100%";
+    body.style.overflow = "scroll";
+    webPageTitle.style.fontSize = "50px";
+
+  }//end function closeSideNav
+
+
+  </script>
+
+  </body>
+</html>

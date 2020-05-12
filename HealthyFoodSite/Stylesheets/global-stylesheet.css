@@ -1,0 +1,147 @@
+/* The below styles are used for styling the <header> and <footer> section of this one page layout site. */
+
+body{
+
+  margin: 0;
+
+}
+
+
+header{/*Represents the mobile header */
+
+  background-color: #22485e;
+  border-bottom: 6px solid #01AAE7;
+  height: 60px;
+
+}
+
+#hamburger-menu-button{
+
+  background: rgba(255,255,255,0);/*Use an rgba value with an opacity value to make the element
+  become transparent, but keep it's text/inner content visible */
+
+  border-style: none;
+  position: relative;
+  top: 13px;
+  left: 5px;
+
+  outline-style: none;
+}
+
+
+#navigation-bar{
+
+  /*background-color: pink;*/
+  display: none;
+
+}
+
+
+#navigation-menu{
+
+  list-style-type: none;
+  /*background-color: lightgreen;*/
+
+}
+
+#navigation-bar li{
+
+  /*background-color: yellow;
+  border: 2px solid black;*/
+
+  display: inline;
+
+}
+
+#navigation-bar a{
+
+  text-decoration: none;
+  color: white;
+
+  font-size: 38px;
+  padding-right: 8px;
+  padding-left: 8px;
+  font-weight: bold;
+
+}
+
+#navigation-bar a:hover{
+
+    color: lightgreen;
+
+}
+
+footer{
+
+  background-color: #22485e;
+  border-top: 6px solid #01AAE7;
+  height: 70px;
+
+}
+
+@media screen and (max-width: 920px){/* This is so that the header will become sticky when
+  it hits 920px and below */
+
+  header{
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1;
+
+  }
+
+}
+
+@media screen and (min-width: 920px){/* Media query for the header and navigation bar to change */
+
+#sideNav{
+
+  display: none;
+
+}
+
+header{
+
+  /*background: rgba(20, 43, 56, 0);*/
+  background-color: #22485e;
+  height: 65px;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 1;
+
+}
+
+#hamburger-menu-button{
+
+  display: none;
+
+}
+
+#navigation-bar{
+
+  /*background-color: pink;*/
+
+  display: block;
+  display: flex;
+
+  justify-content: center;
+
+}
+
+#navigation-menu{
+
+  /*background-color: red;*/
+  flex-basis: 300px;
+  margin-right: 2%;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding-right: 40px;
+
+}
+
+}
